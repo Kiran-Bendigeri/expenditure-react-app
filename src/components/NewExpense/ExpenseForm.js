@@ -49,15 +49,14 @@ const ExpenseForm = (props) => {
   }
 
   const SubmitHandler = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     const expenseData = {
       title: titleEntered,
       amount: amountEntered,
-      date: new Date(dateEntered),
+      date: new Date(dateEntered)
     }
 
     props.onSaveExpenseData(expenseData);
-    // console.log(expenseData)
 
     setTitleEntered("");
     setAmountEntered("");
@@ -87,7 +86,6 @@ const ExpenseForm = (props) => {
             type="date"
             min="2019-01-01"
             max="2022-12-31"
-            placeholder="DD.MM.YYYY"
             value={dateEntered}
             required="true"
           />
