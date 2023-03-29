@@ -1,0 +1,9 @@
+.new-expense{
+    max-width: 50rem;
+    background-color: #687194e4;
+    padding: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem auto;
+    justify-content: center;
+}

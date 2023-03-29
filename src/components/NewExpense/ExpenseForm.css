@@ -1,0 +1,29 @@
+.new-expense__controls{
+    display: flex;
+    font-weight: bold;
+    flex-wrap: wrap;
+    color: #fff;
+    justify-content: space-between;
+}
+
+.new-expense-control{
+    display: flex;
+    flex-flow: column;
+    line-height: 2rem;
+    /* width: 100%; */
+    margin-inline: 2rem;
+}
+
+.input{
+    max-width: 10rem;
+    padding: 0.3rem;
+}
+
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-flow: row-reverse;
+    margin-inline: 2rem;
+    padding-top: 1rem;
+}
