@@ -5,6 +5,12 @@ import Card from '../UI/Card'
 
 const ExpenseItem = (props) => {
 
+  const [expenseId] = useState(props.expenseId)
+
+  const deleteButtonHandler = () => {
+    props.onDelete(expenseId);
+  }
+
   return (
     <Card className="expense-item">
       <div className="expense-item-date">
@@ -14,6 +20,7 @@ const ExpenseItem = (props) => {
         <h3>{props.title}</h3>
         <div className="expense-item__price">$ {props.amount}</div>
       </div>
+      <button value={expenseId} onClick={deleteButtonHandler} type='submit'>Delete</button>
     </Card>
   );
 }

@@ -29,15 +29,28 @@ function App() {
     setExpenses(prevExpense => {
       return [expense, ...prevExpense];
     });
+    // console.log(expense);
+  }
 
-    console.log(expense);
+  const ItemDeleteHandler = (expenseId) => {
+    for(let expense of expenses){
+      if(expense.id === expenseId){
+        let index = expenses.indexOf(expense);
+        expenses.splice(index, 1);
+        // console.log("Executed");
+        // console.log(expenses);
+      }
+    }
+    setExpenses(expenses => {
+      return [...expenses];
+    });
   }
 
   return (
     <div className='app'>
       <header className='Header'>
         <NewExpense onAddExpense = {AddExpenseHandler}/>
-        <Expenses items = {expenses} />
+        <Expenses items = {expenses} onItemDelete={ItemDeleteHandler}/>
       </header>
     </div>   
   );

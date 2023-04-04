@@ -3,7 +3,7 @@ import './ExpenseForm.css'
 
 const ExpenseForm = (props) => {
   const [titleEntered, setTitleEntered] = useState('')
-  const [amountEntered, setAmountEntered] = useState('')
+  const [amountEntered, setAmountEntered] = useState("")
   const [dateEntered, setDateEntered] = useState('')
 
   const CancelButtonHandler = () => {
@@ -78,7 +78,7 @@ const ExpenseForm = (props) => {
             type="text"
             placeholder="Name"
             value={titleEntered}
-            required="true"
+            required='true'
           />
         </div>
 
@@ -91,7 +91,7 @@ const ExpenseForm = (props) => {
             min="2019-01-01"
             max="2023-12-31"
             value={dateEntered}
-            required="true"
+            required='true'
           />
         </div>
 
@@ -104,14 +104,14 @@ const ExpenseForm = (props) => {
             type="number"
             placeholder="Dollers"
             value={amountEntered}
-            required="true"
+            required='true'
           />
         </div>
       </div>
 
       <div className="buttons">
         <button className="submit-button" type="submit">Submit</button>
-        <button onClick={CancelButtonHandler}>Cancel</button>
+        <button className='cancel-button' onClick={CancelButtonHandler}>Cancel</button>
       </div>
     </form>
   )

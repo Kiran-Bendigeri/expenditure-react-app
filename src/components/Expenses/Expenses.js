@@ -4,9 +4,10 @@ import ExpenseFilter from './ExpenseFilter'
 import React, { useState } from 'react'
 import ExpenseList from './ExpenseList'
 import ExpensesChart from '../Chart/ExpensesChart'
+import TotalExpense from './TotalExpense'
 
 const Expenses = (props) => {
-  const [selectedYear, SetSelectedYear] = useState("2019")
+  const [selectedYear, SetSelectedYear] = useState("2019");
 
   const YearChangeHandler = (SelectedYear) => {
     SetSelectedYear(SelectedYear)
@@ -15,6 +16,10 @@ const Expenses = (props) => {
   const filteredExpenseYear = props.items.filter((expense) => {
     return expense.date.getFullYear().toString() === selectedYear;
   })
+
+  const ItemDeleteHandler =(expenseId) => {
+    props.onItemDelete(expenseId);
+  }
 
   return (
       <Card className="expenses">
@@ -25,8 +30,11 @@ const Expenses = (props) => {
         />
         <ExpensesChart expenses = {filteredExpenseYear}/>
         <li>
-          <ExpenseList items = {filteredExpenseYear}/>
+          <ExpenseList items = {filteredExpenseYear} onDeleteItem={ItemDeleteHandler} />
         </li>
+        <TotalExpense 
+          items = {filteredExpenseYear}
+        />
       </Card>
   )
 }
