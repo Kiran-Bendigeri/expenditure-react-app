@@ -5,3 +5,7 @@
     background-color: #222;
     max-width: 95%;
 }
+
+li{
+    list-style: none;
+}
